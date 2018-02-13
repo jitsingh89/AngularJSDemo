@@ -1,23 +1,21 @@
 <!doctype html>
-<html ng-app="app">
+<html ng-app="myAppModule">
   <head>
 <script src="script/angular.min.js"></script>
 <script src="index.js"></script> 
   </head>
-  <body>
+  <body>    
     <div ng-controller="controllerOne">
       <label>Name:</label>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <input type="text" ng-model="Name" placeholder="Enter a name here">
       <hr>
-      <h1>Hello {{yourName}}!</h1>
+      <h1>Hello {{Name}}!</h1>
     </div>
-
     <div ng-controller="controllerTwo">
       <label>Name:</label>
       <input type="text" ng-model="Name" placeholder="Enter a name here">
       <hr>
       <h1>Hello {{Name}}!</h1>
     </div>
-
   </body>
 </html>

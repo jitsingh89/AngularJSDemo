@@ -1,11 +1,18 @@
-var app = angular.module('app', [])
-.controller('controllerOne', ['$scope', function($scope){
-    $scope.yourName="Jitendra";
-    $scope.getName = function(){
-        return 'Jitendra Singh';
-    }
+var app = angular.module('myAppModule', [])
+.controller('controllerOne', ['$scope', 'Hello', function($scope, Hello){
+   console.log(Hello.helloWorld() + ' controller one');
+   $scope.Name=Hello.helloWorld();
 }])
-.controller('controllerTwo', ['$scope', ' $controller', function($scope,  $controller){
-    $controller('controllerOne', {$scope: $scope})
-    $scope.Name=$scope.getName();
+.controller('controllerTwo', ['$scope', 'Hello', function($scope, Hello){
+   console.log(Hello.helloWorld() + ' controller two');
+   $scope.Name=Hello.helloWorld();
 }])
+.factory('Hello', [function() {
+   var data = {
+      'helloWorld': function() {
+          return 'Hello World';
+       }
+   }
+
+   return data;
+}]);
